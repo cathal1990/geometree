@@ -6,12 +6,12 @@ import Canvas from './components/Canvas'
   const draw = (context) => {
     let angleIncrement = (Math.PI * 30) / 180;
     let startX = context.canvas.width / 2;
-    let startY = 700;
+    let startY = 1000;
     let height = (context.canvas.height * 7) / 24;
-    let thickness = 2;
-    let maxDepth = 10;
+    let thickness = 5;
+    let maxDepth = 8;
     let count = 0;
-    let branchPropagation = 3;
+    let branchPropagation = 5;
     let createRect = (x, y ,width, height, color) => {
         context.fillStyle = color;
         context.fillRect(x, y, width, height);
@@ -56,7 +56,9 @@ function App() {
 
   return (
     <>
-      <Canvas draw={draw} height={800} width={800} />
+    <div id="canvasId">
+      <Canvas draw={draw} height={1000} width={1200} />
+    </div>
     </>
   )
 }
